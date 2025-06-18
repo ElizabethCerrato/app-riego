@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Sofia+Sans+Condensed:ital,wght@0,1..1000;1,1..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/style.css">
+    <title>Riego</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Riego</h1>
+        <h2>La app que te recuerda regar tus plantas</h2>
+      </header>
+      <section class="avisos">
+        <h3>Hoy toca regar</h3>
+        <div id="regar-hoy"></div>
+      </section>
+      <section class="formulario">
+        <h3>Agregar nueva planta</h3>
+        <form id="formularioPlantas">
+          <fieldset>
+            <legend>Datos de la planta</legend>
+            <div>
+              <label for="planta">Nombre de la planta:</label>
+              <input type="text" id="planta" name="planta" required />
+            </div>
+            <div>
+              <label for="frecuencia">Frecuencia de riego en días:</label>
+              <input
+                type="number"
+                id="frecuencia"
+                name="frecuencia"
+                min="1"
+                required
+              />
+            </div>
+            <div>
+              <label for="fecha">Fecha de último riego:</label>
+              <input type="date" id="fecha" name="fecha" required />
+            </div>
+            <div>
+              <label for="flor">¿Tiene flores?</label>
+              <select id="flor" name="flor">
+                <option value="si">Si</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <button type="submit" id="guardar">Guardar</button>
+          </fieldset>
+        </form>
+      </section>
+
+      <section class="coleccion">
+        <h3>Listado de mis plantas</h3>
+        <div id="error"></div>
+        <div id="plantas-container"></div>
+      </section>
+
+      <section class="db">
+        <h3>Biblioteca de Plantas</h3>
+        <form id="busqueda">
+          <fieldset>
+            <legend>Buscar planta</legend>
+            <div id="por-nombre">
+              <input
+                type="checkbox"
+                id="activarNombre"
+                name="nombre"
+                value="nombre"
+              />
+              <label for="buscar-nombre">Nombre</label>
+              <input type="text" value="" id="buscar-nombre" name="nombre" />
+            </div>
+            <div id="por-luz">
+              <input type="checkbox" id="activarLuz" name="luz" value="Luz" />
+              <label for="luz">Tipo de luz</label>
+              <select id="luz" name="tipo-luz">
+                <option value="">Tipo de luz</option>
+                <option value="directa">Directa</option>
+                <option value="indirecta">Indirecta</option>
+                <option value="alta">Alta</option>
+                <option value="media">Media</option>
+                <option value="baja">Baja</option>
+              </select>
+            </div>
+            <div id="por-frecuencia">
+              <input
+                type="checkbox"
+                id="activarFrecuencia"
+                name="frecuencia"
+                value="Frecuencia"
+              />
+              <label for="frecuencia-busqueda">Frecuencia de riego</label>
+              <input
+                type="range"
+                min="1"
+                max="15"
+                value="1"
+                class="slider"
+                id="frecuencia-busqueda"
+              />
+              <span id="span-slider"></span>
+            </div>
+            <button type="submit" id="buscar">Buscar</button>
+          </fieldset>
+        </form>
+        <div id="biblioteca"></div>
+      </section>
+      <div
+        class="modal"
+        id="modal-agregar"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+      >
+        <form id="formularioModal">
+          <h2 id="modal-title">Agregar planta a colección</h2>
+          <label for="fechaModal">Fecha último riego:</label>
+          <input type="date" name="fechaModal" id="fechaModal" />
+          <label for="floresModal">¿Tiene flores?</label>
+          <select name="flores" id="floresModal">
+            <option value="si">Si</option>
+            <option value="no">No</option>
+          </select>
+          <button type="submit" id="guardarModal">Guardar</button>
+          <button type="button" id="cancelarModal">Cancelar</button>
+        </form>
+      </div>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

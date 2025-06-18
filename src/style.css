@@ -1,0 +1,125 @@
+.color-1 {
+  color: #f8f6f1;
+}
+.color-2 {
+  color: #e1eae5;
+}
+.color-3 {
+  color: #a7d7b8;
+}
+.color-4 {
+  color: #66b2a0;
+}
+.color-5 {
+  color: #4e796b;
+}
+
+/* CSS Variables */
+:root {
+  --color-1: #f8f6f1;
+  --color-2: #e1eae5;
+  --color-3: #a7d7b8;
+  --color-4: #66b2a0;
+  --color-5: #4e796b;
+}
+
+h1{
+  font-family: "Sofia Sans Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 3.2em;
+  line-height: 1.1;
+  color:#213547;;
+
+}
+h2 {
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.2em;
+  line-height: 1.5;
+  color:#213547;
+}
+main {
+  display:flex;
+  justify-content: space-between;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+  color: var(--color-5);
+}
+
+section.avisos {
+  color:var(--color-5);
+}
+div.regar-hoy {
+color: var(--color-4);
+}
+.modal{
+  display: none;
+  position: fixed; /* Para que se superponga al resto */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4); /* Fondo semi-transparente */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Encima de todo */
+}
+.modal.activa{
+  display: flex; /* O block, según lo que necesites */
+  visibility: visible;
+}
+
+#formularioModal {
+  color: #1a1a1a;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+#span-slider {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button.regar-hoy{
+  color: navy;
+}
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  color: white;
+  background-color: var(--color-4);
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: var(--color-1);
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
