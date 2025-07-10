@@ -6,6 +6,8 @@ import {
   capitalizarNombre,
   tocaRegarHoy,
   limpiarFormulario,
+  validarNombre,
+  validarFecha,
 } from "./utils.js";
 
 import { mostrarPlantas, mostrarRegarhoy, mostrarMensajeVacio } from "./ui.js";

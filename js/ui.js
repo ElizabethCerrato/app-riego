@@ -3,7 +3,7 @@
 
 import { crearTarjetaColeccion, crearTarjetaAviso, crearTarjetaBiblioteca } from './dom.js';
 import { calcularProximaFecha, tocaRegarHoy} from './utils.js';
-import { divListado, divRegar, divBiblioteca, divError, porFrecuencia } from './variables.js';
+import { divListado, divBiblioteca, divError, porFrecuencia, sectionAvisos } from './variables.js';
 import { plantasDB } from './data/plantasDB.js';
 
 
@@ -27,7 +27,7 @@ export function mostrarPlantas() {
 }
 
 export function mostrarRegarhoy() {
-  divRegar.innerHTML = "";
+  sectionAvisos.innerHTML = "";
   const arr = JSON.parse(localStorage.getItem("plantas"));
   if (arr !== null) {
     const filtrado = arr.filter((x) =>

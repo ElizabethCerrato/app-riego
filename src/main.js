@@ -12,7 +12,7 @@ import {
 
 import { registrarPlanta } from "../js/storage.js";
 import { filtrarPlanta } from "../js/filtros.js";
-import { btnGuardar } from "../js/variables.js";
+import { btnGuardar, nombrePlanta, frecuenciaRiego, fechaRiego, enFlor } from "../js/variables.js";
 
 function inicio() {
   mostrarPlantas();

@@ -2,9 +2,9 @@
 // Se encarga del funcionamiento de la modal.
 
 import { mostrarPlantas, mostrarRegarhoy, mostrarMensajeVacio } from "./ui";
-import { limpiarFormulario } from "./utils";
+import { limpiarFormulario, validarFecha } from "./utils";
 import { guardarPlanta } from "./storage";
-import { divModal, btnGuardarModal, btnCancelarModal } from "./variables";
+import { florModal, divModal, btnGuardarModal, btnCancelarModal } from "./variables";
 
 export function abrirModal() {
   divModal.classList.add("activa");

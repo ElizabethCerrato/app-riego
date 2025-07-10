@@ -3,35 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Sofia+Sans+Condensed:ital,wght@0,1..1000;1,1..1000&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="src/style.css">
     <title>Riego</title>
   </head>
   <body>
     <main>
       <header>
-        <h1>Riego</h1>
-        <h2>La app que te recuerda regar tus plantas</h2>
+        <h1 class="tittle-app">Riego</h1>
+        <h2 class="action-app">La app que te recuerda regar tus plantas</h2>
       </header>
       <section class="avisos">
         <h3>Hoy toca regar</h3>
-        <div id="regar-hoy"></div>
+
+        <!--
+        creo esta estructura con JS: 
+           <div class="regar-hoy">
+            <div class= nombre-planta> 
+              <h4>Árbol de Jade</h4>   
+            </div>
+           <div class="area-emoji"> 
+            <p>Emoji Estoy sedienta</p> 
+           </div>
+           <div class = div-btn-condicional>
+            <button class="btn-condicional">Regar</button>
+           </div>
+        </div>
+        
+        
+        -->
       </section>
       <section class="formulario">
-        <h3>Agregar nueva planta</h3>
+        <div class="agregar">
+          <h3>🌼​ Agregar nueva planta</h3>
+        </div>
         <form id="formularioPlantas">
           <fieldset>
-            <legend>Datos de la planta</legend>
-            <div>
-              <label for="planta">Nombre de la planta:</label>
+            <legend></legend>
+            <div class="nombre-form">
+              <label for="planta">Nombre:</label>
               <input type="text" id="planta" name="planta" required />
             </div>
-            <div>
+            <div class="frecuencia-form">
               <label for="frecuencia">Frecuencia de riego en días:</label>
               <input
                 type="number"
@@ -41,34 +59,70 @@
                 required
               />
             </div>
-            <div>
+            <div class="fecha-form">
               <label for="fecha">Fecha de último riego:</label>
               <input type="date" id="fecha" name="fecha" required />
             </div>
-            <div>
+            <div class="flores-form">
               <label for="flor">¿Tiene flores?</label>
               <select id="flor" name="flor">
                 <option value="si">Si</option>
                 <option value="no">No</option>
               </select>
             </div>
-            <button type="submit" id="guardar">Guardar</button>
+            <div class="btn-form-sub">
+              <button class="btn-sub" type="submit" id="guardar">
+                Guardar
+              </button>
+            </div>
           </fieldset>
         </form>
       </section>
 
       <section class="coleccion">
-        <h3>Listado de mis plantas</h3>
+        <div class="listado">
+          <h3>Listado de mis plantas</h3>
+        </div>
         <div id="error"></div>
-        <div id="plantas-container"></div>
+        <div id="plantas-container">
+          <!-- Con JS creo esta estructura:
+           <div class="tarjeta-planta">
+            <div class="columna-izda"></div>
+              <div class="TITULO-COLECCION">
+                <h4>Sansevieria</h4>
+              </div>
+              <div class= ULTIMO-COLECCION>
+                <p>Último riego: 19-06-2025</p>
+              </div>
+              <div class= REGAR-COLECCION>
+                <p>Regar cada 15 días.</p>
+              <div>
+              <div class= PROXIMO-COLECCION>
+                <p>Próximo riego: 04-07-2025</p>
+              </div>
+              <div class="columna-dcha"></div>
+              <div class= BTN-COLECCION>
+                <button data-id="1750320796718">Eliminar</button>
+              </div>
+              <div class= IMG-COLECCION>
+              <img src="/assets/img/plantas/sansevieria.jpg" alt="Sansevieria" width="200" height="auto">
+            </div>
+          </div>
+
+
+          
+          -->
+        </div>
       </section>
 
       <section class="db">
-        <h3>Biblioteca de Plantas</h3>
-        <form id="busqueda">
+        <div class="biblio">
+          <h3>Biblioteca de Plantas</h3>
+        </div>
+        <form class="busqueda-form" id="busqueda">
           <fieldset>
-            <legend>Buscar planta</legend>
-            <div id="por-nombre">
+            <legend>Buscar planta por:</legend>
+            <div class="busqueda-nombre" id="por-nombre">
               <input
                 type="checkbox"
                 id="activarNombre"
@@ -78,7 +132,7 @@
               <label for="buscar-nombre">Nombre</label>
               <input type="text" value="" id="buscar-nombre" name="nombre" />
             </div>
-            <div id="por-luz">
+            <div class="busqueda-id" id="por-luz">
               <input type="checkbox" id="activarLuz" name="luz" value="Luz" />
               <label for="luz">Tipo de luz</label>
               <select id="luz" name="tipo-luz">
@@ -90,7 +144,7 @@
                 <option value="baja">Baja</option>
               </select>
             </div>
-            <div id="por-frecuencia">
+            <div class="frecuencia-busqueda" id="por-frecuencia">
               <input
                 type="checkbox"
                 id="activarFrecuencia"
@@ -108,10 +162,12 @@
               />
               <span id="span-slider"></span>
             </div>
-            <button type="submit" id="buscar">Buscar</button>
+            <div class="btn-buscar">
+              <button type="submit" id="buscar">Buscar</button>
+            </div>
           </fieldset>
         </form>
-        <div id="biblioteca"></div>
+        <div class="biblio" id="biblioteca"></div>
       </section>
       <div
         class="modal"
